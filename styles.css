@@ -1,0 +1,302 @@
+:root {
+  --white-color: #ffffff;
+  --font-color: #b7c0ff;
+  --darkest-blue: #131a57;
+  --medium-blue: #283593;
+  --content-space-width: 1690px;
+  --brain-round-size: 930px;
+  --brain-outline-size: 213px;
+  --video-outline-size: 224px;
+  --video-outline-size2: 192px;
+  --prv-size: 13px;
+  --prv-active-size: 24px;
+}
+
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: url("assets/fonts/Gilroy-Medium.eot");
+  src: local("assets/fonts/Gilroy-Medium"), local("Gilroy-Medium"),
+    url("assets/fonts/Gilroy-Medium.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/Gilroy-Medium.woff2") format("woff2"),
+    url("assets/fonts/Gilroy-Medium.woff") format("woff"),
+    url("assets/fonts/Gilroy-Medium.ttf") format("truetype"),
+    url("assets/fonts/Gilroy-Medium.svg#Gilroy-Medium") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy-SemiBold";
+  src: url("assets/fonts/Gilroy-SemiBold.eot");
+  src: local("assets/fonts/Gilroy-SemiBold"), local("Gilroy-SemiBold"),
+    url("assets/fonts/Gilroy-SemiBold.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/Gilroy-SemiBold.woff2") format("woff2"),
+    url("assets/fonts/Gilroy-SemiBold.woff") format("woff"),
+    url("assets/fonts/Gilroy-SemiBold.ttf") format("truetype"),
+    url("assets/fonts/Gilroy-SemiBold.svg#Gilroy-SemiBold") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Gilroy-Medium", Arial, sans-serif;
+  font-size: 18px;
+}
+
+html,
+body,
+div,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--darkest-blue);
+}
+
+h1,
+h2 {
+  font-family: "Gilroy-SemiBold", Arial, sans-serif;
+  font-weight: 500;
+}
+
+.logo,
+.menu-link,
+.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+h1 {
+  color: var(--white-color);
+  font-size: 105px;
+  line-height: 114px;
+}
+
+h2 {
+  color: var(--font-color);
+  font-size: 58px;
+}
+
+p {
+  color: var(--font-color);
+  line-height: 30px;
+  margin: 60px 0 0 0;
+}
+
+.logo {
+  color: var(--font-color);
+  font-size: 30px;
+  letter-spacing: 20px;
+  margin: 75px 0 0 0;
+}
+
+.menu-link {
+  color: var(--font-color);
+  letter-spacing: 10px;
+  text-align: center;
+  margin: 0 0 0 60px;
+}
+
+.btn {
+  display: block;
+  height: 83px;
+  width: 336px;
+  color: var(--white-color);
+  border: solid 1px var(--white-color);
+  margin: 60px 0 0 0;
+  background-color: transparent;
+  border-radius: 0;
+  letter-spacing: 5px;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--medium-blue);
+  position: relative;
+}
+
+.wrapper {
+  max-width: 96%;
+  width: var(--content-space-width);
+  margin: 0 auto;
+}
+
+.centered-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-block,
+.title-block,
+.wrapper {
+  position: relative;
+}
+
+.menu-block {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: calc(50% - (var(--content-space-width) / 2));
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  margin: 86px 0 0 0;
+}
+
+.title-block {
+  margin: 0 0 0 72px;
+  z-index: 100;
+  max-width: 30%;
+}
+
+.content-block {
+  margin: 0 0 0 74px;
+  max-width: 700px;
+  z-index: 100;
+  display: none;
+}
+
+.brain-block {
+  width: var(--brain-round-size);
+  height: var(--brain-round-size);
+  border-radius: 50%;
+  background-color: var(--darkest-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: calc(50vh - (var(--brain-round-size) / 2));
+  left: calc(50% - (var(--brain-round-size) / 2));
+  z-index: 50;
+}
+
+.brain-block::before {
+  content: "";
+  display: block;
+  width: 1353px;
+  height: 1353px;
+  border-radius: 50%;
+  z-index: 45;
+  position: absolute;
+  background-color: rgba(19, 26, 87, 0.43);
+}
+
+.brain-block img {
+  height: 700px;
+  margin: 0 0 60px 100px;
+  z-index: 55;
+}
+
+.video-block {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+}
+
+.video-block video {
+}
+
+.content-bg {
+  height: 100vh;
+  width: calc(50% - 60px);
+  background-color: var(--medium-blue);
+  z-index: 30;
+  position: absolute;
+}
+
+.previews {
+  margin: 0 auto 112px auto;
+}
+
+.scrolled .brain-block {
+  width: 100%;
+  height: 100vh;
+  border-radius: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.scrolled .brain-block img {
+  width: 0px;
+  height: 0px;
+}
+
+.scrolled .brain-block::before {
+  width: var(--brain-round-size);
+  height: var(--brain-round-size);
+}
+
+.scrolled .content-block {
+  display: block;
+}
+
+.scrolled .video-block {
+  /*border-radius: 0 50% 50% 0;
+   left: -50%;
+  top: -60px;*/
+  z-index: 50;
+  /* width: 1000px;
+  height: 1000px;
+  left: calc(-50% - 512px);
+  */
+  left: -2400px;
+  top: -350px;
+}
+
+.scrolled .video-block video {
+  border-radius: 0 1000px 1000px 0;
+  height: 2000px;
+  border: solid 230px rgba(40, 53, 147, 0.5);
+}
+/*
+.scrolled .video-block video::before,
+.scrolled .video-block video::after {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.scrolled .video-block video::before {
+  background-color: rgba(40, 53, 147, 0.5);
+  z-index: 45;
+  width: 1376px;
+  height: 1376px;
+}
+
+.scrolled .video-block video::after {
+  background-color: rgba(40, 53, 147, 0.3);
+  z-index: 40;
+  width: 1767px;
+  height: 1767px;
+}
+*/
+.scrolled .content-bg {
+  display: none;
+}
+
+.invisible {
+  display: none;
+  visibility: hidden;
+}
